@@ -14,7 +14,7 @@
     <a title="Guest Struct Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">YenoKit Docs</a> (46% documented)</p>
+        <p><a href="../index.html">YenoKit Docs</a> (64% documented)</p>
         <p class="header-right"><a href="https://github.com/aeta/YenoKit"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -131,6 +131,62 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:7YenoKit5GuestV0C6StatusO"></a>
+                    <a name="//apple_ref/swift/Enum/GuestStatus" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit5GuestV0C6StatusO">GuestStatus</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Status of guest, typically determined whether or not payment has been paid in full.</p>
+
+                        <a href="../Structs/Guest/GuestStatus.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">GuestStatus</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Serializable.html">Serializable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit5GuestV0C4FormO"></a>
+                    <a name="//apple_ref/swift/Enum/GuestForm" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit5GuestV0C4FormO">GuestForm</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>How should <q>Guest</q> be handled logically.</p>
+
+                        <a href="../Structs/Guest/GuestForm.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">GuestForm</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Serializable.html">Serializable</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:7YenoKit10ManageableP2idSiv"></a>
                     <a name="//apple_ref/swift/Property/id" class="dashAnchor"></a>
                     <a class="token" href="#/s:7YenoKit10ManageableP2idSiv">id</a>
@@ -193,8 +249,16 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The type of this Guest. This changes the behavior of how this Guest is handled logically.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">form</span><span class="p">:</span> <span class="kt"><a href="../Structs/Guest/GuestForm.html">GuestForm</a></span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -212,8 +276,48 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>The status of this Guest.</p>
 
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">status</span><span class="p">:</span> <span class="kt"><a href="../Structs/Guest/GuestStatus.html">GuestStatus</a></span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit5GuestV5itemsSayAA4ItemVGv"></a>
+                    <a name="//apple_ref/swift/Property/items" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit5GuestV5itemsSayAA4ItemVGv">items</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>The Items associated with this Guest.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This can only be mutated via the <code>add(item:_)</code> and <code>remove(at:_)</code> methods.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">internal(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">items</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Item.html">Item</a></span><span class="p">]</span></code></pre>
+
+                        </div>
                       </div>
                     </section>
                   </div>
@@ -250,10 +354,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Add an item to <code>items</code></p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    Only mutates if <code>status == .open</code>.
+                        <p>Add an item to <code><a href="../Structs/Guest.html#/s:7YenoKit5GuestV5itemsSayAA4ItemVGv">items</a></code></p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>status == .open</code>.
 
 </div>
 
@@ -282,10 +386,10 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Removes an item at index in <code>items</code></p>
-<div class="aside aside-important">
-    <p class="aside-title">Important</p>
-    Only mutates if <code>status == .open</code>.
+                        <p>Removes an item at index in <code><a href="../Structs/Guest.html#/s:7YenoKit5GuestV5itemsSayAA4ItemVGv">items</a></code></p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>status == .open</code>.
 
 </div>
 
@@ -301,68 +405,12 @@
                     </section>
                   </div>
                 </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7YenoKit5GuestV0C6StatusO"></a>
-                    <a name="//apple_ref/swift/Enum/GuestStatus" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7YenoKit5GuestV0C6StatusO">GuestStatus</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Status of guest, typically determined whether or not payment has been paid in full.</p>
-
-                        <a href="../Structs/Guest/GuestStatus.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">GuestStatus</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Serializable.html">Serializable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:7YenoKit5GuestV0C4FormO"></a>
-                    <a name="//apple_ref/swift/Enum/GuestForm" class="dashAnchor"></a>
-                    <a class="token" href="#/s:7YenoKit5GuestV0C4FormO">GuestForm</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>How should <q>Guest</q> be handled logically.</p>
-
-                        <a href="../Structs/Guest/GuestForm.html" class="slightly-smaller">See more</a>
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">enum</span> <span class="kt">GuestForm</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="kt"><a href="../Protocols/Serializable.html">Serializable</a></span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
               </ul>
             </div>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">Aeta</a>. All rights reserved. (Last updated: 2017-07-29)</p>
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">Aeta</a>. All rights reserved. (Last updated: 2017-07-30)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

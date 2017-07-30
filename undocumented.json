@@ -79,56 +79,7 @@
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
-      "line": 12,
-      "symbol": "Batch.BatchStatusErrors.ordersNotPaid",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
-      "line": 13,
-      "symbol": "Batch.BatchStatusErrors.batchClosed",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
-      "line": 16,
-      "symbol": "Batch.BatchStatus",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
-      "line": 17,
-      "symbol": "Batch.BatchStatus.open",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
-      "line": 18,
-      "symbol": "Batch.BatchStatus.closed",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
-      "line": 23,
-      "symbol": "Batch.orders",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
-      "line": 24,
-      "symbol": "Batch.status",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
-      "line": 29,
+      "line": 40,
       "symbol": "Batch.init(withID:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -143,43 +94,29 @@
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Guest.swift",
       "line": 12,
-      "symbol": "Guest.form",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Guest.swift",
-      "line": 13,
-      "symbol": "Guest.status",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Guest.swift",
-      "line": 18,
-      "symbol": "Guest.init(id:form:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Guest.swift",
-      "line": 44,
       "symbol": "Guest.GuestStatus.open",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Guest.swift",
-      "line": 45,
+      "line": 13,
       "symbol": "Guest.GuestStatus.closed",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Guest.swift",
-      "line": 46,
+      "line": 14,
       "symbol": "Guest.GuestStatus.particallyPaid",
       "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Guest.swift",
+      "line": 39,
+      "symbol": "Guest.init(id:form:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
@@ -191,7 +128,7 @@
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Menu/Item.swift",
-      "line": 31,
+      "line": 29,
       "symbol": "Item.init(id:name:description:footnote:price:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -205,21 +142,7 @@
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Menu/ItemCategory.swift",
-      "line": 12,
-      "symbol": "ItemCategory.description",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Menu/ItemCategory.swift",
-      "line": 13,
-      "symbol": "ItemCategory.items",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Menu/ItemCategory.swift",
-      "line": 15,
+      "line": 19,
       "symbol": "ItemCategory.init(id:name:withDescription:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -233,14 +156,14 @@
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Menu/ItemModifier.swift",
-      "line": 18,
+      "line": 16,
       "symbol": "ItemModifier.init(id:name:price:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Menu/ItemModifier.swift",
-      "line": 50,
+      "line": 46,
       "symbol": "ItemModifiers.init(id:name:modifiers:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -254,44 +177,23 @@
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Order.swift",
-      "line": 10,
-      "symbol": "Order.OrderType",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Order.swift",
-      "line": 11,
+      "line": 12,
       "symbol": "Order.OrderType.dineIn",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Order.swift",
-      "line": 12,
+      "line": 13,
       "symbol": "Order.OrderType.takeOut",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Order.swift",
-      "line": 13,
+      "line": 14,
       "symbol": "Order.OrderType.delivery",
       "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Order.swift",
-      "line": 18,
-      "symbol": "Order.type",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Order.swift",
-      "line": 19,
-      "symbol": "Order.guests",
-      "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
@@ -317,107 +219,65 @@
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/YNORequest.swift",
-      "line": 13,
-      "symbol": "YNORequest.SerializeError",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/YNORequest.swift",
-      "line": 14,
-      "symbol": "YNORequest.CannotUpdateError",
-      "symbol_kind": "source.lang.swift.decl.var.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/YNORequest.swift",
-      "line": 16,
-      "symbol": "YNORequest.RequestType",
-      "symbol_kind": "source.lang.swift.decl.enum",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/YNORequest.swift",
-      "line": 17,
-      "symbol": "YNORequest.RequestType.all",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/YNORequest.swift",
-      "line": 18,
-      "symbol": "YNORequest.RequestType.id",
-      "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/YNORequest.swift",
-      "line": 21,
+      "line": 31,
       "symbol": "YNORequest.request(_:completion:)",
       "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/YNORouter.swift",
-      "line": 12,
-      "symbol": "YNORouter",
-      "symbol_kind": "source.lang.swift.decl.enum",
+      "line": 19,
+      "symbol": "YNORouter.baseURLString",
+      "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/YNORouter.swift",
-      "line": 20,
+      "line": 21,
       "symbol": "YNORouter.Object",
       "symbol_kind": "source.lang.swift.decl.enum",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/YNORouter.swift",
-      "line": 21,
+      "line": 22,
       "symbol": "YNORouter.Object.items",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/YNORouter.swift",
-      "line": 22,
+      "line": 23,
       "symbol": "YNORouter.Object.itemmodifiers",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/YNORouter.swift",
-      "line": 25,
+      "line": 26,
       "symbol": "YNORouter.get",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/YNORouter.swift",
-      "line": 26,
+      "line": 27,
       "symbol": "YNORouter.update",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/YNORouter.swift",
-      "line": 27,
+      "line": 28,
       "symbol": "YNORouter.post",
       "symbol_kind": "source.lang.swift.decl.enumelement",
       "warning": "undocumented"
     },
     {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/YNORouter.swift",
-      "line": 28,
+      "line": 29,
       "symbol": "YNORouter.delete",
       "symbol_kind": "source.lang.swift.decl.enumelement",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Server/YNORouter.swift",
-      "line": 30,
-      "symbol": "YNORouter.asURLRequest()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     }
   ],
