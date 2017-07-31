@@ -50,27 +50,6 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/distiller/YenoKit/YenoKit/Helpers/Serialization/Serializable+Serialize.swift",
-      "line": 20,
-      "symbol": "Serializable.serialize()",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Helpers/Serialization/Serializable+Serialize.swift",
-      "line": 25,
-      "symbol": "Serializable.decode(fromData:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Helpers/Serialization/Serializable+Serialize.swift",
-      "line": 30,
-      "symbol": "Serializable.decode(fromData:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
       "line": 9,
       "symbol": "Batch",
@@ -197,31 +176,10 @@
       "warning": "undocumented"
     },
     {
-      "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/POS/Manageable+Request.swift",
-      "line": 55,
-      "symbol": "Manageable.post(completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/POS/Manageable+Request.swift",
-      "line": 74,
-      "symbol": "Manageable.update(completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.instance",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/YNORequest.swift",
       "line": 11,
       "symbol": "YNORequest",
       "symbol_kind": "source.lang.swift.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/distiller/YenoKit/YenoKit/Server/Request/YNORequest.swift",
-      "line": 31,
-      "symbol": "YNORequest.request(_:completion:)",
-      "symbol_kind": "source.lang.swift.decl.function.method.static",
       "warning": "undocumented"
     },
     {

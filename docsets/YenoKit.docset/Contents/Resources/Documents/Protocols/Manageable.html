@@ -14,7 +14,7 @@
     <a title="Manageable Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">YenoKit Docs</a> (64% documented)</p>
+        <p><a href="../index.html">YenoKit Docs</a> (71% documented)</p>
         <p class="header-right"><a href="https://github.com/aeta/YenoKit"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -195,6 +195,141 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE6Objecta"></a>
+                    <a name="//apple_ref/swift/Alias/Object" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE6Objecta">Object</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Object of Self.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">Object</span> <span class="o">=</span> <span class="k">Self</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE23YNORequestGetCompletiona"></a>
+                    <a name="//apple_ref/swift/Alias/YNORequestGetCompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE23YNORequestGetCompletiona">YNORequestGetCompletion</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>GET</code> completion handler. Returns an optional Array of <code><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE6Objecta">Object</a></code> regardless of <code>count</code>. See important callout.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    If there is an <code>Error</code>, treat that as a failure. It is possible for <code>[Object]</code> to not be <code>nil</code>, even if <code>Error</code> is also not <code>nil</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">YNORequestGetCompletion</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?,</span> <span class="p">[</span><span class="kt"><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE6Objecta">Object</a></span><span class="p">]?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE24YNORequestPostCompletiona"></a>
+                    <a name="//apple_ref/swift/Alias/YNORequestPostCompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE24YNORequestPostCompletiona">YNORequestPostCompletion</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>POST</code> completion handler. Returns a single optional <code><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE6Objecta">Object</a></code>. See important callout.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    If there is an <code>Error</code>, treat that as a failure. It is possible for <code>[Object]</code> to not be <code>nil</code>, even if <code>Error</code> is also not <code>nil</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">YNORequestPostCompletion</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?,</span> <span class="kt"><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE6Objecta">Object</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE26YNORequestUpdateCompletiona"></a>
+                    <a name="//apple_ref/swift/Alias/YNORequestUpdateCompletion" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE26YNORequestUpdateCompletiona">YNORequestUpdateCompletion</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p><code>PUT</code> completion handler. Returns a single optional <code><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE6Objecta">Object</a></code>. See important callout.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    If there is an <code>Error</code>, treat that as a failure. It is possible for <code>[Object]</code> to not be <code>nil</code>, even if <code>Error</code> is also not <code>nil</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">YNORequestUpdateCompletion</span> <span class="o">=</span> <span class="p">(</span><span class="kt">Error</span><span class="p">?,</span> <span class="kt"><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE6Objecta">Object</a></span><span class="p">?)</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE3getyAA10YNORequestC11RequestTypeO_ys5Error_pSg_SayxGSgtc10completiontFZ"></a>
                     <a name="//apple_ref/swift/Method/get(_:completion:)" class="dashAnchor"></a>
                     <a class="token" href="#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE3getyAA10YNORequestC11RequestTypeO_ys5Error_pSg_SayxGSgtc10completiontFZ">get(_:completion:)</a>
@@ -208,9 +343,15 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <div class="aside aside-precondition">
+                        <p>This method will attempt to get Object of <code>ID</code> from server.</p>
+<div class="aside aside-precondition">
     <p class="aside-title">Precondition</p>
-    <code>Self</code> is registered as a <code><a href="../Enums/YNORouter/Object.html">YNORouter.Object</a></code>
+    <code><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE6Objecta">Object</a></code> is registered as a <code><a href="../Enums/YNORouter/Object.html">YNORouter.Object</a></code>
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>ID</code> already exists on server and required properties are not <code>null</code>.
 
 </div>
 
@@ -219,7 +360,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">get</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Classes/YNORequest.html">YNORequest</a></span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt">YNORequestGetCompletion</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">static</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">get</span><span class="p">(</span><span class="n">_</span> <span class="nv">type</span><span class="p">:</span> <span class="kt"><a href="../Classes/YNORequest.html">YNORequest</a></span><span class="o">.</span><span class="kt">RequestType</span><span class="p">,</span> <span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE23YNORequestGetCompletiona">YNORequestGetCompletion</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -242,14 +383,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This method will attempt to post Object to server. If an Object of <code>ID</code> already exists on server, this method will create a new Object with a new <code>ID</code>. The existing Object of <code>ID</code> will not be overwritten.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    <code>POST</code> ignores the local <code>ID</code> property and will create a new Object on server regardless of whether or not Object of <code>ID</code> already exists on server.
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Manageable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">post</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE24YNORequestPostCompletiona">YNORequestPostCompletion</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -272,14 +418,19 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>This method will attempt to update the Object on server by overwriting all properties of <code>ID</code>.</p>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>ID</code> already exists on server.
+
+</div>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Manageable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">update</span><span class="p">(</span><span class="nv">completion</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="kt"><a href="../Protocols/Manageable.html#/s:7YenoKit10ManageablePA2aBRzAA12SerializableRzlE26YNORequestUpdateCompletiona">YNORequestUpdateCompletion</a></span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -291,7 +442,7 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">Aeta</a>. All rights reserved. (Last updated: 2017-07-30)</p>
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">Aeta</a>. All rights reserved. (Last updated: 2017-07-31)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>

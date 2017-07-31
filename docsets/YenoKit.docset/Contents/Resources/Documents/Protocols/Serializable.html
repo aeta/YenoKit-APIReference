@@ -14,7 +14,7 @@
     <a title="Serializable Protocol Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">YenoKit Docs</a> (64% documented)</p>
+        <p><a href="../index.html">YenoKit Docs</a> (71% documented)</p>
         <p class="header-right"><a href="https://github.com/aeta/YenoKit"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -157,7 +157,7 @@ all models who are interested in being encoded.</p>
                       </div>
                       <h4>Default Implementation</h4>
                       <div class="default_impl abstract">
-                        <p>Undocumented</p>
+                        <p>Serialize into <code>Data</code> in the form of a <code>JSON</code>.</p>
 
                       </div>
                       <div class="declaration">
@@ -191,16 +191,39 @@ all models who are interested in being encoded.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Decode into Self.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Serializable</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">decode</span><span class="p">(</span><span class="n">fromData</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="k">Self</span><span class="p">?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Data</code> in the form of a <code>JSON</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>A single Self. Can be <code>nil</code>.</p>
                       </div>
                     </section>
                   </div>
@@ -221,16 +244,39 @@ all models who are interested in being encoded.</p>
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
+                        <p>Decode into Self.</p>
 
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">Serializable</span><span class="p">:</span> <span class="kt">Codable</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="nf">decode</span><span class="p">(</span><span class="n">fromData</span> <span class="nv">data</span><span class="p">:</span> <span class="kt">Data</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="k">Self</span><span class="p">]?</span></code></pre>
 
                         </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>data</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p><code>Data</code> in the form of <code>JSON</code> containing an Array.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                      <div>
+                        <h4>Return Value</h4>
+                        <p>An Array of Self. Can be <code>nil</code>.</p>
                       </div>
                     </section>
                   </div>
@@ -304,7 +350,7 @@ all models who are interested in being encoded.</p>
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">Aeta</a>. All rights reserved. (Last updated: 2017-07-30)</p>
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">Aeta</a>. All rights reserved. (Last updated: 2017-07-31)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
