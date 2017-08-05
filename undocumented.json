@@ -50,6 +50,125 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 25,
+      "symbol": "YNOMenuManagement.DiskFileNameCategories",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 26,
+      "symbol": "YNOMenuManagement.DiskFileNameModifiers",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 27,
+      "symbol": "YNOMenuManagement.DiskDirectory",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 30,
+      "symbol": "YNOMenuManagement.Notifications",
+      "symbol_kind": "source.lang.swift.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 31,
+      "symbol": "YNOMenuManagement.Notifications.error",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 33,
+      "symbol": "YNOMenuManagement.Notifications.addCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 34,
+      "symbol": "YNOMenuManagement.Notifications.updateCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 35,
+      "symbol": "YNOMenuManagement.Notifications.removeCategory",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 37,
+      "symbol": "YNOMenuManagement.Notifications.addItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 38,
+      "symbol": "YNOMenuManagement.Notifications.updateItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 39,
+      "symbol": "YNOMenuManagement.Notifications.removeItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 41,
+      "symbol": "YNOMenuManagement.Notifications.addModifier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 42,
+      "symbol": "YNOMenuManagement.Notifications.updateModifier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 43,
+      "symbol": "YNOMenuManagement.Notifications.removeModifier",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 45,
+      "symbol": "YNOMenuManagement.Notifications.moveItem",
+      "symbol_kind": "source.lang.swift.decl.enumelement",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 47,
+      "symbol": "YNOMenuManagement.Notifications.name",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/distiller/YenoKit/YenoKit/POS/menu_management/YNOMenuManagement.swift",
+      "line": 53,
+      "symbol": "YNOMenuManagement.shared",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/distiller/YenoKit/YenoKit/POS/models/Batch.swift",
       "line": 9,
       "symbol": "Batch",

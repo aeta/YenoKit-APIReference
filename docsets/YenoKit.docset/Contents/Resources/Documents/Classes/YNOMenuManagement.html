@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>YNOMenuManagement Class Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Class/YNOMenuManagement" class="dashAnchor"></a>
+    <a title="YNOMenuManagement Class Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">YenoKit Docs</a> (67% documented)</p>
+        <p class="header-right"><a href="https://github.com/aeta/YenoKit"><img src="../img/gh.png"/>View on GitHub</a></p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">YenoKit Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        YNOMenuManagement Class Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/YNOMenuManagement.html">YNOMenuManagement</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/YNOMenuManagement/Notifications.html">– Notifications</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/YNORequest.html">YNORequest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/YNORequest/RequestType.html">– RequestType</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enums</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/QueueType.html">QueueType</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/YNORouter.html">YNORouter</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/YNORouter/Object.html">– Object</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7YenoKit5delayySd_AA9QueueTypeO05queueE0yyc7closuretF">delay(_:queueType:closure:)</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:7YenoKit9performOnyAA9QueueTypeO_yyc7closuretF">performOn(_:closure:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/Manageable.html">Manageable</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Serializable.html">Serializable</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structs</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/Batch.html">Batch</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Batch/BatchStatusErrors.html">– BatchStatusErrors</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Batch/BatchStatus.html">– BatchStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Guest.html">Guest</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Guest/GuestStatus.html">– GuestStatus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Guest/GuestForm.html">– GuestForm</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Item.html">Item</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ItemCategory.html">ItemCategory</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ItemModifier.html">ItemModifier</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/ItemModifiers.html">ItemModifiers</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Order.html">Order</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Order/OrderType.html">– OrderType</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>YNOMenuManagement</h1>
+              <div class="declaration">
+                <div class="language">
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">YNOMenuManagement</span></code></pre>
+
+                </div>
+              </div>
+            <p>A singleton for managing a POS Menu. Integrates with YenoKit-Server.</p>
+
+<ul>
+<li>Upon accessing properties, it is required to check whether or not <code>MenuManagement</code> has completed the initial synchronization via <code>hasInitialSyncCompleted</code>. If <code>!hasInitialSyncCompleted</code>, use <code>initialSyncFinishedHandler</code> to execute actions once <code>hasInitialSyncCompleted</code>. See example below:
+<code>
+let management = YNOMenuManagement.shared
+if !management.hasInitialSyncCompleted {
+management.initialSyncFinishedHandler = {
+    // rit dit dit doo doo ...
+}
+}
+</code></li>
+<li>There should only be one instance of this in an app at any given time. Having more than one could cause synchronization issues. The initializer is <code>private</code> to prevent any cases of this.</li>
+</ul>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC22DiskFileNameCategoriesSSvZ"></a>
+                    <a name="//apple_ref/swift/Variable/DiskFileNameCategories" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC22DiskFileNameCategoriesSSvZ">DiskFileNameCategories</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">YNOMenuManagement</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC21DiskFileNameModifiersSSvZ"></a>
+                    <a name="//apple_ref/swift/Variable/DiskFileNameModifiers" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC21DiskFileNameModifiersSSvZ">DiskFileNameModifiers</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">YNOMenuManagement</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC13DiskDirectoryXevZ"></a>
+                    <a name="//apple_ref/swift/Variable/DiskDirectory" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC13DiskDirectoryXevZ">DiskDirectory</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">YNOMenuManagement</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC13NotificationsO"></a>
+                    <a name="//apple_ref/swift/Enum/Notifications" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC13NotificationsO">Notifications</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="../Classes/YNOMenuManagement/Notifications.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">YNOMenuManagement</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC6sharedACvZ"></a>
+                    <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC6sharedACvZ">shared</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">class</span> <span class="kt">YNOMenuManagement</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC10categoriesSayAA12ItemCategoryVGv"></a>
+                    <a name="//apple_ref/swift/Property/categories" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC10categoriesSayAA12ItemCategoryVGv">categories</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Categories, including Items.</p>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    Index <code>0</code> is <code>unassigned</code> items.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">categories</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Structs/ItemCategory.html">ItemCategory</a></span><span class="p">]()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC15modifiersGroupsSayAA13ItemModifiersVGv"></a>
+                    <a name="//apple_ref/swift/Property/modifiersGroups" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC15modifiersGroupsSayAA13ItemModifiersVGv">modifiersGroups</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>All modifier groups (<code><a href="../Structs/ItemModifiers.html">ItemModifiers</a></code>).</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">modifiersGroups</span> <span class="o">=</span> <span class="p">[</span><span class="kt"><a href="../Structs/ItemModifiers.html">ItemModifiers</a></span><span class="p">]()</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC10isEditableSbv"></a>
+                    <a name="//apple_ref/swift/Property/isEditable" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Allows for mutation of items. Default is <code>false</code> until <code>isSynced</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">isEditable</span><span class="p">:</span> <span class="kt">Bool</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC7noItemsSbv"></a>
+                    <a name="//apple_ref/swift/Property/noItems" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC7noItemsSbv">noItems</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>If all categories have no items assigned. This ignores the <code>count</code> of <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10categoriesSayAA12ItemCategoryVGv">categories</a></code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">noItems</span><span class="p">:</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC22hasInitialSyncFinishedSbv"></a>
+                    <a name="//apple_ref/swift/Property/hasInitialSyncFinished" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC22hasInitialSyncFinishedSbv">hasInitialSyncFinished</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Has <code>Management</code> synced with server?</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">private(set)</span> <span class="kd">public</span> <span class="k">var</span> <span class="nv">hasInitialSyncFinished</span> <span class="o">=</span> <span class="kc">false</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC36InitialSyncFinishedCompletionHandlera"></a>
+                    <a name="//apple_ref/swift/Alias/InitialSyncFinishedCompletionHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC36InitialSyncFinishedCompletionHandlera">InitialSyncFinishedCompletionHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Completion handler for a finished initial synchronization.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">typealias</span> <span class="kt">InitialSyncFinishedCompletionHandler</span> <span class="o">=</span> <span class="p">()</span> <span class="o">-&gt;</span> <span class="kt">Void</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC26initialSyncFinishedHandleryycSgv"></a>
+                    <a name="//apple_ref/swift/Property/initialSyncFinishedHandler" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC26initialSyncFinishedHandleryycSgv">initialSyncFinishedHandler</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>This completion handler is run after the initial synchronization has finished. Can be <code>nil</code>.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">initialSyncFinishedHandler</span><span class="p">:</span> <span class="kt"><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC36InitialSyncFinishedCompletionHandlera">InitialSyncFinishedCompletionHandler</a></span><span class="p">?</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC10saveToDiskyyKF"></a>
+                    <a name="//apple_ref/swift/Method/saveToDisk()" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC10saveToDiskyyKF">saveToDisk()</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Attempts to save current Menu to disk.</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">saveToDisk</span><span class="p">()</span> <span class="k">throws</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Category%20mutations"></a>
+                <a name="//apple_ref/swift/Section/Category mutations" class="dashAnchor"></a>
+                <a href="#/Category%20mutations">
+                  <h3 class="section-name">Category mutations</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC11addCategorySbAA04ItemF0VF"></a>
+                    <a name="//apple_ref/swift/Method/addCategory(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC11addCategorySbAA04ItemF0VF">addCategory(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>newCategory.id</code> is unique compared to <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10categoriesSayAA12ItemCategoryVGv">categories</a></code>
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>section</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">addCategory</span><span class="p">(</span><span class="n">_</span> <span class="nv">newCategory</span><span class="p">:</span> <span class="kt"><a href="../Structs/ItemCategory.html">ItemCategory</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC14updateCategorySbSi2of_AA04ItemF0V2totF"></a>
+                    <a name="//apple_ref/swift/Method/updateCategory(of:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC14updateCategorySbSi2of_AA04ItemF0V2totF">updateCategory(of:to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    The <code>categoryID</code> exists in a category in <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10categoriesSayAA12ItemCategoryVGv">categories</a></code>.
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    There is only one of the category of <code>categoryID</code>.
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>section</code> and <code>new_category</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateCategory</span><span class="p">(</span><span class="n">of</span> <span class="nv">categoryID</span><span class="p">:</span> <span class="kt"><a href="../Structs/ItemCategory.html">ItemCategory</a></span><span class="o">.</span><span class="kt">ID</span><span class="p">,</span> <span class="n">to</span> <span class="nv">newCategory</span><span class="p">:</span> <span class="kt"><a href="../Structs/ItemCategory.html">ItemCategory</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC14removeCategorySbSi2at_tF"></a>
+                    <a name="//apple_ref/swift/Method/removeCategory(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC14removeCategorySbSi2at_tF">removeCategory(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    This method will also remove all items inside the category to remove!
+
+</div>
+<div class="aside aside-important">
+    <p class="aside-title">Important</p>
+    You cannot remove <code>unassigned</code> category a.k.a. index <code>0</code>.
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>index</code> is within range of <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10categoriesSayAA12ItemCategoryVGv">categories</a></code>
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>section</code> and <code>category_id</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeCategory</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Item%20mutations"></a>
+                <a name="//apple_ref/swift/Section/Item mutations" class="dashAnchor"></a>
+                <a href="#/Item%20mutations">
+                  <h3 class="section-name">Item mutations</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC7addItemSbAA0F0V_Si10toCategorytF"></a>
+                    <a name="//apple_ref/swift/Method/addItem(_:toCategory:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC7addItemSbAA0F0V_Si10toCategorytF">addItem(_:toCategory:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>index</code> is within range of <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10categoriesSayAA12ItemCategoryVGv">categories</a></code>
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>index_path</code> and <code>item</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">addItem</span><span class="p">(</span><span class="n">_</span> <span class="nv">item</span><span class="p">:</span> <span class="kt"><a href="../Structs/Item.html">Item</a></span><span class="p">,</span> <span class="n">toCategory</span> <span class="nv">categoryIndex</span><span class="p">:</span> <span class="kt">Index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC10updateItemSbSi2of_Si10inCategoryAA0F0V2totF"></a>
+                    <a name="//apple_ref/swift/Method/updateItem(of:inCategory:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC10updateItemSbSi2of_Si10inCategoryAA0F0V2totF">updateItem(of:inCategory:to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    The <code>itemID</code> exists in the category.
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    There is only one of the item of <code>itemID</code>.
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>index_path</code> and <code>new_item</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateItem</span><span class="p">(</span><span class="n">of</span> <span class="nv">itemID</span><span class="p">:</span> <span class="kt"><a href="../Structs/Item.html">Item</a></span><span class="o">.</span><span class="kt">ID</span><span class="p">,</span> <span class="n">inCategory</span> <span class="nv">categoryIndex</span><span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="n">to</span> <span class="nv">newItem</span><span class="p">:</span> <span class="kt"><a href="../Structs/Item.html">Item</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC10removeItemSb10Foundation9IndexPathV2at_tF"></a>
+                    <a name="//apple_ref/swift/Method/removeItem(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC10removeItemSb10Foundation9IndexPathV2at_tF">removeItem(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>.
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>index</code> is within range of <code>items</code>.
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>index_path</code> and <code>item_id</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeItem</span><span class="p">(</span><span class="n">at</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The IndexPath is defined as, <code>row == item in category</code>, <code>section == category</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Modifier%20mutations"></a>
+                <a name="//apple_ref/swift/Section/Modifier mutations" class="dashAnchor"></a>
+                <a href="#/Modifier%20mutations">
+                  <h3 class="section-name">Modifier mutations</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC11addModifierSbAA13ItemModifiersVF"></a>
+                    <a name="//apple_ref/swift/Method/addModifier(_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC11addModifierSbAA13ItemModifiersVF">addModifier(_:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>.
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>index</code> is within range of <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC15modifiersGroupsSayAA13ItemModifiersVGv">modifiersGroups</a></code>.
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>index</code> and <code>modifier</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">addModifier</span><span class="p">(</span><span class="n">_</span> <span class="nv">modifier</span><span class="p">:</span> <span class="kt"><a href="../Structs/ItemModifiers.html">ItemModifiers</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC14updateModifierSbSi2of_AA13ItemModifiersV2totF"></a>
+                    <a name="//apple_ref/swift/Method/updateModifier(of:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC14updateModifierSbSi2of_AA13ItemModifiersV2totF">updateModifier(of:to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>.
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    The <code>modifierID</code> exists in the category.
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    There is only one of the item of <code>modifierID</code>.
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>index</code> and <code>new_modifier</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">updateModifier</span><span class="p">(</span><span class="n">of</span> <span class="nv">modifierID</span><span class="p">:</span> <span class="kt"><a href="../Structs/ItemModifier.html">ItemModifier</a></span><span class="o">.</span><span class="kt">ID</span><span class="p">,</span> <span class="n">to</span> <span class="nv">newModifier</span><span class="p">:</span> <span class="kt"><a href="../Structs/ItemModifiers.html">ItemModifiers</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC14removeModifierSbSi2at_tF"></a>
+                    <a name="//apple_ref/swift/Method/removeModifier(at:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC14removeModifierSbSi2at_tF">removeModifier(at:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>.
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>index</code> is within range of <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC15modifiersGroupsSayAA13ItemModifiersVGv">modifiersGroups</a></code>.
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>index</code> and <code>modifier_id</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">removeModifier</span><span class="p">(</span><span class="n">at</span> <span class="nv">index</span><span class="p">:</span> <span class="kt">Index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/Misc%20mutations"></a>
+                <a name="//apple_ref/swift/Section/Misc mutations" class="dashAnchor"></a>
+                <a href="#/Misc%20mutations">
+                  <h3 class="section-name">Misc mutations</h3>
+                </a>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC8moveItemSb10Foundation9IndexPathV4from_Si010toCategoryH0tF"></a>
+                    <a name="//apple_ref/swift/Method/moveItem(from:toCategoryIndex:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC8moveItemSb10Foundation9IndexPathV4from_Si010toCategoryH0tF">moveItem(from:toCategoryIndex:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>.
+
+</div>
+<div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code>index</code> is within range of <code>items</code>.
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>old_index_path</code> and <code>new_index_path</code>.
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">moveItem</span><span class="p">(</span><span class="n">from</span> <span class="nv">indexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="n">toCategoryIndex</span> <span class="nv">destinationSection</span><span class="p">:</span> <span class="kt">Index</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>index</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>The IndexPath is defined as, <code>row == item in category</code>, <code>section == category</code>.</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:7YenoKit17YNOMenuManagementC8moveItemSb10Foundation9IndexPathV4from_AG2totF"></a>
+                    <a name="//apple_ref/swift/Method/moveItem(from:to:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:7YenoKit17YNOMenuManagementC8moveItemSb10Foundation9IndexPathV4from_AG2totF">moveItem(from:to:)</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <div class="aside aside-precondition">
+    <p class="aside-title">Precondition</p>
+    <code><a href="../Classes/YNOMenuManagement.html#/s:7YenoKit17YNOMenuManagementC10isEditableSbv">isEditable</a></code>.
+
+</div>
+<div class="aside aside-postcondition">
+    <p class="aside-title">Postcondition</p>
+    <code>notification.userInfo</code> will contain <code>old_index_path</code> and <code>new_index_path</code>
+
+</div>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight"><code><span class="kd">@discardableResult</span> <span class="kd">public</span> <span class="kd">func</span> <span class="nf">moveItem</span><span class="p">(</span><span class="n">from</span> <span class="nv">sourceIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">,</span> <span class="n">to</span> <span class="nv">destinationIndexPath</span><span class="p">:</span> <span class="kt">IndexPath</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2017 <a class="link" href="" target="_blank" rel="external">Aeta</a>. All rights reserved. (Last updated: 2017-08-04)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.8.3</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>
